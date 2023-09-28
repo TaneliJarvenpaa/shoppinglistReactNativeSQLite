@@ -65,8 +65,8 @@ export default function App() {
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) =>
           <View style={styles.itemlist}>
-            <Text>{item.product} {item.amount}</Text>
-            <Text style={{color: '#0000ff'}} onPress={() => deleteItem(item.id)}>done</Text>
+            <Text style={styles.listrow}>{item.id}:   {item.product}, {item.amount}   </Text>
+            <Text style={{color: '#0000ff'}} onPress={() => deleteItem(item.id)}>bought</Text>
           </View>}
       />
 
@@ -93,5 +93,12 @@ const styles = StyleSheet.create({
     borderColor:'black',
     borderWidth:1,
     height:60
+  },
+  itemlist:{
+    flexDirection:'row',
+  },
+  listrow:{
+    fontStyle:'italic',
+    fontSize:18
   }
 });
